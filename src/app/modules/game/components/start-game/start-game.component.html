@@ -1,0 +1,25 @@
+<div>
+    <form>
+        <div class="form-group" *ngIf="!this.startRandom">
+            <div class="input-group">
+                <div class="input-group-prepend" (click)="this.typeSecret = !this.typeSecret">
+                    <button class="input-group-text" id="typesecretcheck">
+                        <i class="fa" [class.fa-eye]="!this.typeSecret" [class.fa-eye-slash]="this.typeSecret"></i>
+                    </button>
+                </div>
+                <input [type]="this.typeSecret ? 'password' : 'text'" class="form-control form-control-lg"
+                    name="gameword" id="gameword" placeholder="choose word" [(ngModel)]="this.gameWord"
+                    (change)="this.gameWord = this.gameWord.toUpperCase()" />
+                <div class="input-group-append" (click)="this.takeRandom()">
+                    <button class="input-group-text" id="typesecretcheck">
+                        <i class="fa fa-random"></i> Generate
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="this.gameWord || this.startRandom">
+            <button type="button" class="btn btn-block btn-lg btn-primary" (click)="this.startGame()">
+                &gt; Start game</button>
+        </div>
+    </form>
+</div>
