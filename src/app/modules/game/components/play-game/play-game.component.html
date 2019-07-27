@@ -1,4 +1,31 @@
 <hm-storefeedback [isFetching]="this.isFetching" [error]="this.error"></hm-storefeedback>
-<div *ngIf="this.game">
-    Playing.. {{this.game.word}}
+<div *ngIf="this.game" class="container-fluid text-center">
+    <div *ngIf="this.game.wrong >= 11">
+        <h1>
+            You are so dead!
+        </h1>
+    </div>
+    <div *ngIf="this.wordFound">
+        <h1>
+            You won, word found with {{this.game.wrong}} wrong guesses.
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-sm-6">
+            <div class="d-flex justify-content-around frame" [class.wrong]="this.lastCorrect === 0"
+                [class.right]="this.lastCorrect > 0">
+                <span *ngFor="let wordchar of this.game.chars" class="word"
+                    [class.notfound]="!wordchar.guessed && this.game.wrong === 11">
+                    {{ wordchar.guessed || this.game.wrong === 11 ? wordchar.char : '_' }}
+                </span>
+            </div>
+            <div *ngIf="this.game.wrong < 11">
+                <hm-keyboard (keyTyped)="this.keyTyped($event)"></hm-keyboard>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6 frame" [class.wrong]="this.lastCorrect === 0"
+            [class.right]="this.lastCorrect > 0">
+            <img src="assets/step{{this.game.wrong}}.png" class="w-100" />
+        </div>
+    </div>
 </div>

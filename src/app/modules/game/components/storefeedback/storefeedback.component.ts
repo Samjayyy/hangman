@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'hm-storefeedback',
   templateUrl: './storefeedback.component.html',
-  styleUrls: ['./storefeedback.component.css']
+  styleUrls: ['./storefeedback.component.scss']
 })
 export class StoreFeedbackComponent implements OnInit {
 

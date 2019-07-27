@@ -8,13 +8,15 @@ import { StartGameComponent } from './components/start-game/start-game.component
 import { PlayGameComponent } from './components/play-game/play-game.component';
 import { StoreFeedbackComponent } from './components/storefeedback/storefeedback.component';
 import { HttpClientModule } from '@angular/common/http';
+import { KeyboardComponent } from './components/keyboard/keyboard.component';
 
 @NgModule({
   declarations: [
     RootComponent,
     StartGameComponent,
     PlayGameComponent,
-    StoreFeedbackComponent
+    StoreFeedbackComponent,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,

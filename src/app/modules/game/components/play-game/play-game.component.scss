@@ -1,0 +1,17 @@
+.word {
+  font-size: 16px;
+  font-size: 4vw;
+}
+.notfound {
+  color: #A33;
+  font-style:italic;
+}
+.frame {
+  border: 1px solid #000;
+}
+.frame.right {
+  border-color: #3A3;
+}
+.frame.wrong {
+  border-color: #A33;
+}

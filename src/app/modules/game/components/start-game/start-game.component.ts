@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'hm-start-game',
   templateUrl: './start-game.component.html',
-  styleUrls: ['./start-game.component.css']
+  styleUrls: ['./start-game.component.scss']
 })
 export class StartGameComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
@@ -41,5 +41,4 @@ export class StartGameComponent implements OnInit, OnDestroy {
     this.gameStore.createNew(this.gameWord);
     this.router.navigate(['/play']);
   }
-
 }

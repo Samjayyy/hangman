@@ -1,0 +1,9 @@
+<!-- Example using ngSwitch and two buttons. -->
+<div *ngFor="let row of rowsOfKeys" class="keyboard center-items">
+    <span *ngFor="let key of row">
+        <button (click)="this.virtualKeySubject.next(key)" class="btn btn-primary mr-1 key-used"
+            [class.key-used]="this.isKeyUsed(key)">
+            {{ key }}
+        </button>
+    </span>
+</div>
